@@ -14,6 +14,7 @@ Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
 # Source0-md5:	50dff3867f5f1eabfae547cf0eb65ec7
 URL:		http://pear.php.net/package/MDB2_Driver_querysim/
+BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-pear
 Requires:	php-common >= 3:4.3.0
