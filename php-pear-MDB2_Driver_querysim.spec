@@ -1,25 +1,25 @@
 %include	/usr/lib/rpm/macros.php
 %define		_class		MDB2
 %define		_subclass	Driver_querysim
-%define		_status		alpha
+%define		_status		beta
 %define		_pearname	MDB2_Driver_querysim
 
 Summary:	%{_pearname} - querysim MDB2 driver
 Summary(pl):	%{_pearname} - sterownik querysim dla MDB2
 Name:		php-pear-%{_pearname}
-Version:	0.1.1
-Release:	2
+Version:	0.2.1
+Release:	1
 License:	BSD License
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	50dff3867f5f1eabfae547cf0eb65ec7
+# Source0-md5:	38f40af472ebb521756f8d60a5de591e
 URL:		http://pear.php.net/package/MDB2_Driver_querysim/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 Requires:	php-pear
 Requires:	php-common >= 3:4.3.0
 Requires:	php-pear-PEAR-core >= 1:1.0b1
-Requires:	php-pear-MDB2 >= 2.0.0-0.beta6
+Requires:	php-pear-MDB2 >= 1:2.0.0-0.RC1
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -33,9 +33,21 @@ Sterownik Querysim dla MDB2.
 
 Ta klasa ma w PEAR status: %{_status}.
 
+%package tests
+Summary:	Tests for PEAR::%{_pearname}
+Summary(pl):	Testy dla PEAR::%{_pearname}
+Group:		Development/Languages/PHP
+Requires:	%{name} = %{epoch}:%{version}-%{release}
+AutoReq:	no
+
+%description tests
+Tests for PEAR::%{_pearname}.
+
+%description tests -l pl
+Testy dla PEAR::%{_pearname}.
+
 %prep
 %pear_package_setup
-rm -f ./%{php_pear_dir}/package_querysim.php
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -51,3 +63,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc docs/%{_pearname}/docs/querysim_readme.txt
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/MDB2/Driver/querysim.php
+
+%files tests
+%defattr(644,root,root,755)
+%{php_pear_dir}/tests/*
