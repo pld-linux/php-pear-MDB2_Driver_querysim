@@ -7,12 +7,12 @@
 Summary:	%{_pearname} - querysim MDB2 driver
 Summary(pl):	%{_pearname} - sterownik querysim dla MDB2
 Name:		php-pear-%{_pearname}
-Version:	0.4.0
+Version:	0.5.0
 Release:	1
 License:	BSD License
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	4c0976876cc5241791cf6283bdff2d8f
+# Source0-md5:	a1ca32c7876a1728f24e2447f6b6b749
 URL:		http://pear.php.net/package/MDB2_Driver_querysim/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
@@ -65,6 +65,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc docs/%{_pearname}/docs/querysim_readme.txt
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/MDB2/Driver/querysim.php
+%{php_pear_dir}/MDB2/Driver/Datatype/querysim.php
 
 %files tests
 %defattr(644,root,root,755)
