@@ -5,7 +5,7 @@
 %define		_pearname	MDB2_Driver_querysim
 
 Summary:	%{_pearname} - querysim MDB2 driver
-Summary(pl):	%{_pearname} - sterownik querysim dla MDB2
+Summary(pl.UTF-8):   %{_pearname} - sterownik querysim dla MDB2
 Name:		php-pear-%{_pearname}
 Version:	0.5.0
 Release:	1
@@ -29,14 +29,14 @@ This is the Querysim MDB2 driver.
 
 In PEAR status of this package is: %{_status}.
 
-%description -l pl
+%description -l pl.UTF-8
 Sterownik Querysim dla MDB2.
 
 Ta klasa ma w PEAR status: %{_status}.
 
 %package tests
 Summary:	Tests for PEAR::%{_pearname}
-Summary(pl):	Testy dla PEAR::%{_pearname}
+Summary(pl.UTF-8):   Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{epoch}:%{version}-%{release}
 AutoReq:	no
@@ -45,7 +45,7 @@ AutoProv:	no
 %description tests
 Tests for PEAR::%{_pearname}.
 
-%description tests -l pl
+%description tests -l pl.UTF-8
 Testy dla PEAR::%{_pearname}.
 
 %prep
