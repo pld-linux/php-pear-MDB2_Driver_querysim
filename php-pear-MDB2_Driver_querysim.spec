@@ -7,20 +7,20 @@
 Summary:	%{_pearname} - querysim MDB2 driver
 Summary(pl.UTF-8):	%{_pearname} - sterownik querysim dla MDB2
 Name:		php-pear-%{_pearname}
-Version:	0.5.0
-Release:	2
+Version:	0.6.0
+Release:	1
 License:	BSD License
 Group:		Development/Languages/PHP
 Source0:	http://pear.php.net/get/%{_pearname}-%{version}.tgz
-# Source0-md5:	a1ca32c7876a1728f24e2447f6b6b749
+# Source0-md5:	e4f515fcff4e8ea111cd995ade51135a
 URL:		http://pear.php.net/package/MDB2_Driver_querysim/
 BuildRequires:	php-pear-PEAR
 BuildRequires:	rpm-php-pearprov >= 4.4.2-11
 BuildRequires:	rpmbuild(macros) >= 1.300
-Requires:	php-pear
 Requires:	php-common >= 3:4.3.0
-Requires:	php-pear-PEAR-core >= 1:1.0b1
-Requires:	php-pear-MDB2 >= 1:2.0.0-0.RC1
+Requires:	php-pear
+Requires:	php-pear-MDB2 >= 1:2.3.0
+Requires:	php-pear-PEAR-core >= 1:1.4.0-0.b1
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -39,8 +39,8 @@ Summary:	Tests for PEAR::%{_pearname}
 Summary(pl.UTF-8):	Testy dla PEAR::%{_pearname}
 Group:		Development/Languages/PHP
 Requires:	%{name} = %{epoch}:%{version}-%{release}
-AutoReq:	no
 AutoProv:	no
+AutoReq:	no
 
 %description tests
 Tests for PEAR::%{_pearname}.
@@ -66,6 +66,8 @@ rm -rf $RPM_BUILD_ROOT
 %{php_pear_dir}/.registry/*.reg
 %{php_pear_dir}/MDB2/Driver/querysim.php
 %{php_pear_dir}/MDB2/Driver/Datatype/querysim.php
+
+%{php_pear_dir}/data/%{_pearname}
 
 %files tests
 %defattr(644,root,root,755)
