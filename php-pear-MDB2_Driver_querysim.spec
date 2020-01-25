@@ -1,4 +1,3 @@
-%include	/usr/lib/rpm/macros.php
 %define		_status		beta
 %define		_pearname	MDB2_Driver_querysim
 Summary:	%{_pearname} - querysim MDB2 driver
